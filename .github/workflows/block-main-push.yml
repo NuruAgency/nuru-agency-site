@@ -1,0 +1,21 @@
+name: "🛡️ Sécurité : Anti-Push Direct sur Main"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  block-direct-push:
+    runs-on: ubuntu-latest
+
+    if: github.event.created == false
+    steps:
+      - name: Message d'alerte
+        run: |
+          echo "--------------------------------------------------------"
+          echo "❌ ERREUR : LE PUSH DIRECT SUR 'MAIN' EST INTERDIT."
+          echo "--------------------------------------------------------"
+          echo "Toutes les modifications doivent passer par une Pull Request."
+          echo "Veuillez créer une branche locale, puis ouvrir une PR sur GitHub."
+          exit 1
