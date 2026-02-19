@@ -36,7 +36,7 @@ export function Navbar() {
           type: "spring",
           stiffness: 400, // Augmenté pour la vitesse
           damping: 30, // Ajusté pour la stabilité
-          mass: 0.8, // Plus léger pour plus de réactivité
+          mass: 0.5, // Plus léger pour plus de réactivité
         }}
         className={cn(
           "flex items-center justify-between px-6 py-3",
@@ -48,10 +48,10 @@ export function Navbar() {
           <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-nuru-blue to-nuru-primary shadow-lg shadow-nuru-primary/20">
             <span className="font-bold text-white text-lg font-sans">N</span>
           </div>
-          <span className="text-xl font-bold tracking-tight text-white hidden sm:block">
-            Nuru <span className="text-nuru-primary">Agency</span>
+          <span className=" font-glitz text-xl tracking-widest  tracking-tight text-white hidden sm:block">
+            Nuru <span className="ml-2 font-glitz tracking-widest text-nuru-primary">Agency</span>
           </span>
-        </Link>
+        </Link> 
 
         {/* --- LIENS (Desktop) --- */}
         <div className="hidden md:flex items-center gap-8 bg-white/5 px-6 py-2 rounded-full border border-white/5 backdrop-blur-sm">
