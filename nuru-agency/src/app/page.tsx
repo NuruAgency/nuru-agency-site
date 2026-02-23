@@ -1,40 +1,31 @@
-
-import "./globals.css";
-// import LiquidEther from '../components/background/LiquidEther';
 import { HeroSection } from "@/components/pages/landing/components/HeroSection";
-// import { Realisations } from "@/components/pages/landing/components/Realisations";
+import { TransitionSection } from "@/components/pages/landing/components/TransitionSection";
+import { PortfolioSection } from "@/components/pages/landing/components/PortfolioSection";
+import { PillarsSection } from "@/components/pages/landing/components/PillarsSection";
 
 export default function Home() {
   return (
-
-
-//   <div style={{ width: '100%', height: 600, position: 'relative' }}>
-//   <LiquidEther
-//     colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
-//     mouseForce={20}
-//     cursorSize={100}
-//     isViscous
-//     viscous={30}
-//     iterationsViscous={32}
-//     iterationsPoisson={32}
-//     resolution={0.5}
-//     isBounce={false}
-//     autoDemo
-//     autoSpeed={0.5}
-//     autoIntensity={2.2}
-//     takeoverDuration={0.25}
-//     autoResumeDelay={3000}
-//     autoRampDuration={0.6}
-//     color0="#5227FF"
-//     color1="#FF9FFC"
-//     color2="#B19EEF"
-// />
-// </div>
-    <section className="min-h-screen bg-nuru-background flex flex-col items-center justify-center p-4">
+    <main className="bg-nuru-background min-h-screen selection:bg-nuru-primary selection:text-white">
+      {/* 1. Hero */}
+      <HeroSection />
       
-          <HeroSection />
-          {/* <Realisations /> */}
+      {/* 2. Transition "En 2026..." */}
+      <TransitionSection />
+      
+      {/* 3. Portfolio Mockup */}
+      <PortfolioSection />
+      
+      {/* 4. Pourquoi choisir Nuru Agency */}
+      <PillarsSection />
 
-    </section>
+      {/* 5. Footer Minimaliste */}
+      <footer className="container max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center text-nuru-text/50 text-sm border-t border-white/5 mt-20">
+        <div className="flex items-center gap-2 mb-4 md:mb-0">
+            <div className="w-6 h-6 rounded bg-gradient-to-br from-nuru-blue to-nuru-primary flex items-center justify-center font-bold text-white text-xs">N</div>
+            <span>2026 Nuru Agency. Tous droits réservés.</span>
+        </div>
+        <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
+      </footer>
+    </main>
   );
 }
