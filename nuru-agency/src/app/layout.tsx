@@ -13,9 +13,71 @@ const glitz = localFont({
   display: "swap",
 });
 
+// L'URL de production de ton site
+const siteUrl = "https://nuruagency.com"; 
+
 export const metadata: Metadata = {
-  title: "Nuru Agency | Solutions Digitales & Automatisation",
-  description: "Agence Full Stack & Automation basée en Côte d'Ivoire.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Nuru Agency | Agence Web & Automatisation IA",
+    template: "%s | Nuru Agency", // Pour les autres pages (ex: "Contact | Nuru Agency")
+  },
+  description: "Agence de développement Full Stack et automatisation basée en Côte d'Ivoire. Nous créons des SaaS, des sites natifs et des écosystèmes digitaux sur-mesure (Next.js, n8n).",
+  keywords: [
+    "Nuru Agency",
+    "Agence web Côte d'Ivoire",
+    "Développement sur mesure",
+    "Création de SaaS",
+    "Automatisation n8n",
+    "Développeur Full Stack JS",
+    "Intelligence Artificielle",
+    "Création de site internet Abidjan"
+  ],
+  authors: [{ name: "Benjamin Trazie", url: siteUrl }],
+  creator: "Benjamin Trazie",
+  publisher: "Nuru Agency",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: siteUrl,
+    title: "Nuru Agency | Agence Web & Automatisation IA",
+    description: "Architectures natives et automatisation de processus métier pour décupler votre croissance.",
+    siteName: "Nuru Agency",
+    images: [
+      {
+        url: "/assets/images/og-image.jpg", // ⚠️ À créer (1200x630px) avec ton logo et un beau fond
+        width: 1200,
+        height: 630,
+        alt: "Nuru Agency - Création de solutions digitales",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nuru Agency | Agence Web & Automatisation",
+    description: "Architectures natives et automatisation de processus métier pour décupler votre croissance.",
+    images: ["/assets/images/og-image.jpg"],
+    creator: "@ton_compte_twitter_si_tu_en_as_un",
+  },
+  alternates: {
+    canonical: siteUrl, // Évite le contenu dupliqué aux yeux de Google
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
