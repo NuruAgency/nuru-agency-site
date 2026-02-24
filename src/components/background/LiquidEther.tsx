@@ -2,6 +2,8 @@
 
 
 import React, { useEffect, useRef } from 'react';
+
+// @ts-ignore
 import * as THREE from 'three';
 
 export interface LiquidEtherProps {
