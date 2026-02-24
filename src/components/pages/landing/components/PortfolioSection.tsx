@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronUp, ChevronDown } from "lucide-react"; 
@@ -21,7 +21,7 @@ export function PortfolioSection() {
     setCurrentIndex((prev) => (prev - 1 + portfolioData.length) % portfolioData.length);
   };
 
-  const variants = {
+  const variants: Variants = {
     enter: (direction: number) => ({
       y: direction > 0 ? 200 : -200, 
       opacity: 0,
