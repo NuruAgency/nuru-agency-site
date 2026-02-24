@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { ArrowUpRight, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -34,29 +35,33 @@ export function Navbar() {
         }}
         transition={{
           type: "spring",
-          stiffness: 400, 
-          damping: 30, 
-          mass: 0.5, 
+          stiffness: 400,
+          damping: 30,
+          mass: 0.5,
         }}
         className={cn(
           // 1. pointer-events-auto FIXE LE BUG DES BOUTONS NON CLIQUABLES
           // 2. transition-all rend le changement de fond fluide
           "pointer-events-auto flex items-center justify-between px-6 py-3 transition-all duration-500",
-          isScrolled 
-            // LE VRAI GLASS EFFECT : Fond très transparent (40%), Gros Flou (2xl), Saturation des couleurs (+50%)
-            ? "bg-nuru-background/40 backdrop-blur-2xl saturate-150 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]" 
-            : "bg-transparent border border-transparent" 
+          isScrolled
+            ? // LE VRAI GLASS EFFECT : Fond très transparent (40%), Gros Flou (2xl), Saturation des couleurs (+50%)
+              "bg-nuru-background/40 backdrop-blur-2xl saturate-150 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]"
+            : "bg-transparent border border-transparent",
         )}
       >
         {/* --- LOGO --- */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-nuru-blue to-nuru-primary shadow-lg shadow-nuru-primary/20">
-            <span className="font-bold text-white text-lg font-sans">N</span>
+          <div className="">
+            
+            <Image
+              src="/assets/logo.svg" // ou .png
+              alt="Logo Nuru Agency"
+              width={100} // Largeur d'affichage estimée
+              height={24} // Hauteur d'affichage estimée
+              priority // Très important pour que le logo charge instantanément
+            />
           </div>
-          <span className="font-glitz text-xl tracking-widest tracking-tight text-white hidden sm:block">
-            Nuru <span className="ml-2 font-glitz tracking-widest text-nuru-primary">Agency</span>
-          </span>
-        </Link> 
+        </Link>
 
         {/* --- LIENS (Desktop) --- */}
         {/* J'ai allégé le fond derrière les liens pour ne pas superposer deux "verres" */}
@@ -78,7 +83,9 @@ export function Navbar() {
             href="/contact"
             className="hidden md:flex items-center gap-2 bg-nuru-primary hover:bg-nuru-primary/90 text-white px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(230,12,115,0.4)]"
           >
-            <span className="font-glitz tracking-widest">Réserver un appel</span>
+            <span className="font-glitz tracking-widest">
+              Réserver un appel
+            </span>
             <ArrowUpRight className="w-4 h-4" />
           </Link>
 

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronUp, ChevronDown } from "lucide-react"; 
 import { portfolioData } from "@/data/portfolio.data";
 
@@ -93,13 +94,17 @@ export function PortfolioSection() {
               
               {/* --- IMAGE GAUCHE --- */}
               <div className="relative aspect-square md:aspect-[4/3] lg:aspect-auto rounded-[32px] overflow-hidden bg-white p-2 shadow-2xl border border-white/10">
-                <div className="w-full h-full bg-nuru-surface rounded-[24px] relative overflow-hidden flex items-center justify-center">
-                   <div className="absolute inset-0 bg-gradient-to-br from-[#1E233A] to-[#13172A]" />
-                   <div className="relative z-10 text-white/40 font-bold tracking-widest text-sm uppercase font-sans">
-                      Mockup {currentProject.title}
-                   </div>
-                </div>
-              </div>
+  <div className="w-full h-full bg-nuru-surface rounded-[24px] relative overflow-hidden group">
+     <Image
+        src={currentProject.image}
+        alt={`Mockup du projet ${currentProject.title}`}
+        fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+        priority
+     />
+  </div>
+</div>
 
               {/* --- CARTE DROITE --- */}
               <div className="p-8 md:p-12 rounded-[32px] flex flex-col justify-center ">

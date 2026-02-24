@@ -5,7 +5,7 @@ export const portfolioData = [
     logo: "N",
     tags: ["Multi-page", "InfoProduit", "Animé"],
     description: "Ils ont choisi l'excellence technique pour redéfinir leurs standards.",
-    image: "/assets/images/hero-mockup-2.png", // Utilise une de tes images ou un placeholder
+    image: "/assets/nuruagency.png", // Utilise une de tes images ou un placeholder
     detailsLink: "#",
     liveLink: "#"
   },
