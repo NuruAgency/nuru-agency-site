@@ -13,7 +13,7 @@ const pillars = [
 
 export function PillarsSection() {
   return (
-    <section className="py-24 relative flex justify-center">
+    <section className="py-24 relative z-20 bg-nuru-background relative flex justify-center">
       <div className="bg-white max-w-5xl mx-auto rounded-[40px] p-8 md:p-16 text-center border-white/5 ">
         
         <motion.h2 
