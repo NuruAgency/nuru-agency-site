@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, PlaySquare, Star } from "lucide-react";
 import { heroData } from "@/data/hero.data";
 import { cn } from "@/lib/utils";
+import LiquidEther from "@/components/background/LiquidEther";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -36,7 +37,15 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center pt-32 pb-20 overflow-hidden">
-      
+      <div className="absolute inset-0 z-0 opacity-70">
+        <LiquidEther 
+          // J'utilise les couleurs de ta charte : Primary (Magenta), Blue, Purple
+          colors={['#E60C73', '#397BBF', '#4E4595']} 
+          mouseForce={30} // Force de l'interaction avec la souris
+          cursorSize={120} // Taille du curseur fluide
+          autoSpeed={0.8} // Vitesse de l'animation automatique
+        />
+      </div>
 
       <motion.div 
         variants={containerVariants}
