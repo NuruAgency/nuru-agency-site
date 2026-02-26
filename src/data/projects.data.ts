@@ -93,8 +93,8 @@ export const allProjects = [
       solution: "On a donc poussé chaque détail pour coller parfaitement à l'univers code du projet. Le design garantit un parti pris résolument assumé, type 'interface' et un mouvement pensé pour faire vivre la même expérience peu importe l'appareil.\n\n- Direction artistique sombre et audacieuse\n- Micro-interactions 'smooth'\n- Gestion des animations en scroll sur mesure"
     },
     team: [
-      { name: "Benjamin Trazie", role: "Founder & Lead Full Stack JS", image: "/assets/benjamin.jpg" },
-      { name: "Mohamed S.", role: "UI/UX Designer", image: "/assets/mohamed.jpg" }
+      { name: "Benjamin Trazie", role: "Founder & Lead Full Stack JS", image: "/assets/icon.png" },
+      { name: "Mohamed S.", role: "UI/UX Designer", image: "/assets/icon.png" }
     ],
     gallery: [
       "/assets/nuruagency.png",
@@ -116,12 +116,12 @@ export const allProjects = [
       solution: "Nous avons opté pour une architecture micro-services conteneurisée.\n\n- Backend robuste avec NestJS et Prisma pour des requêtes optimisées.\n- Conteneurisation complète via Docker pour un déploiement CI/CD sans faille.\n- Interface utilisateur pensée pour la lisibilité des données complexes."
     },
     team: [
-      { name: "Benjamin Trazie", role: "Lead Full Stack Developer", image: "/assets/benjamin.jpg" }
+      { name: "Benjamin Trazie", role: "Lead Full Stack Developer", image: "/assets/icon.png" }
     ],
     gallery: [
-      "/assets/showcase-2.jpg",
-      "/assets/archive-3.jpg",
-      "/assets/archive-4.jpg"
+      "/assets/nuruagency.png",
+      "/assets/nuruagency.png",
+      "/assets/nuruagency.png"
     ],
     liveLink: "https://finflow.example.com"
   },
@@ -138,11 +138,11 @@ export const allProjects = [
       solution: "Déploiement d'une instance n8n personnalisée hébergée sur le cloud du client.\n\n- Création de workflows complexes (plus de 50 nœuds) pour le traitement des commandes.\n- Développement de webhooks sur-mesure en Node.js pour combler les manques des API existantes.\n- Réduction du temps de traitement manuel de 95%."
     },
     team: [
-      { name: "Benjamin Trazie", role: "Automation Expert & Developer", image: "/assets/benjamin.jpg" }
+      { name: "Benjamin Trazie", role: "Automation Expert & Developer", image: "/assets/icon.png" }
     ],
     gallery: [
-      "/assets/showcase-3.jpg",
-      "/assets/archive-5.jpg"
+      "/assets/nuruagency.png",
+      "/assets/nuruagency.png"
     ],
     liveLink: "https://autoscale.example.com"
   },
@@ -159,12 +159,12 @@ export const allProjects = [
       solution: "Utilisation de l'App Router de Next.js pour des performances optimales (SSR/SSG).\n\n- Intégration de Stripe pour des paiements sécurisés et rapides en 1 clic.\n- Panier d'achat global géré avec Zustand pour une réactivité instantanée.\n- Score Lighthouse de 98+ sur les performances."
     },
     team: [
-      { name: "Benjamin Trazie", role: "Full Stack JS", image: "/assets/benjamin.jpg" },
-      { name: "Mohamed S.", role: "Art Director", image: "/assets/mohamed.jpg" }
+      { name: "Benjamin Trazie", role: "Full Stack JS", image: "/assets/icon.png" },
+      { name: "Mohamed S.", role: "Art Director", image: "/assets/icon.png" }
     ],
     gallery: [
-      "/assets/archive-6.jpg",
-      "/assets/archive-7.jpg"
+      "/assets/nuruagency.png",
+      "/assets/nuruagency.png"
     ],
     liveLink: "https://lumina.example.com"
   },
@@ -181,12 +181,12 @@ export const allProjects = [
       solution: "Création d'un canvas Three.js superposé au DOM HTML.\n\n- Optimisation drastique des modèles 3D (compression Draco).\n- Animations de scroll synchronisées avec la caméra 3D via GSAP.\n- Typographie cinétique et transitions de pages fluides."
     },
     team: [
-      { name: "Benjamin Trazie", role: "Creative Developer", image: "/assets/benjamin.jpg" }
+      { name: "Benjamin Trazie", role: "Creative Developer", image: "/assets/icon.png" }
     ],
     gallery: [
-      "/assets/showcase-1.jpg",
-      "/assets/archive-2.jpg",
-      "/assets/archive-4.jpg"
+      "/assets/nuruagency.png",
+      "/assets/nuruagency.png",
+      "/assets/nuruagency.png"
     ],
     liveLink: "https://archviz.example.com"
   },
@@ -203,12 +203,12 @@ export const allProjects = [
       solution: "Une stack Full JS robuste de bout en bout.\n\n- Application front-end en React Native pour un code source unique.\n- Backend API en NestJS couplé à une base de données chiffrée.\n- Intégration de WebRTC pour les consultations vidéo en direct."
     },
     team: [
-      { name: "Benjamin Trazie", role: "Lead Full Stack JS", image: "/assets/benjamin.jpg" },
-      { name: "Mohamed S.", role: "Product Designer", image: "/assets/mohamed.jpg" }
+      { name: "Benjamin Trazie", role: "Lead Full Stack JS", image: "/assets/icon.png" },
+      { name: "Mohamed S.", role: "Product Designer", image: "/assets/icon.png" }
     ],
     gallery: [
-      "/assets/archive-1.jpg",
-      "/assets/archive-5.jpg"
+      "/assets/nuruagency.png",
+      "/assets/nuruagency.png"
     ],
     liveLink: "https://mediconnect.example.com"
   }
