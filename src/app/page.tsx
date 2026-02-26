@@ -1,4 +1,4 @@
-import { Preloader } from "@/components/ui/Preloader";
+import { Preloader } from "@/components/Preloader";
 import { HeroSection } from "@/components/pages/landing/components/HeroSection";
 import { TransitionSection } from "@/components/pages/landing/components/TransitionSection";
 import { PortfolioSection } from "@/components/pages/landing/components/PortfolioSection";
