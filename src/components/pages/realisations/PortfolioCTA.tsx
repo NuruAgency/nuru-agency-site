@@ -15,7 +15,7 @@ export function PortfolioCTA() {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
-        className="w-full max-w-5xl bg-nuru-primary rounded-[40px] p-8 md:p-16 lg:p-20 flex flex-col items-center text-center shadow-[0_20px_60px_rgba(230,12,115,0.3)] relative overflow-hidden"
+        className="w-full  bg-nuru-primary rounded-[40px] p-8 md:p-16 lg:p-20 flex flex-col items-center text-center shadow-[0_20px_60px_rgba(230,12,115,0.3)] relative overflow-hidden"
       >
         {/* Cercles décoratifs pour donner un peu de relief au fond magenta */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
