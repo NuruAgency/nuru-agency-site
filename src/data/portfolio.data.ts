@@ -1,32 +1,16 @@
-export const portfolioData = [
-  {
-    id: 1,
-    title: "Nuru Agency",
-    logo: "N",
-    tags: ["Multi-page", "InfoProduit", "Animé"],
-    description: "Ils ont choisi l'excellence technique pour redéfinir leurs standards.",
-    image: "/assets/nuruagency.png", // Utilise une de tes images ou un placeholder
-    detailsLink: "#",
-    liveLink: "#"
-  },
-  {
-    id: 2,
-    title: "Pressing QuinApp",
-    logo: "P",
-    tags: ["SaaS", "Dashboard", "Mobile-First"],
-    description: "Une application métier complète pour la gestion de pressing avec suivi en temps réel et automatisation.",
-    image: "/assets/images/hero-mockup-2.png",
-    detailsLink: "#",
-    liveLink: "#"
-  },
-  {
-    id: 3,
-    title: "Nuru Recruitment",
-    logo: "R",
-    tags: ["IA", "Automatisation", "n8n"],
-    description: "Système de recrutement intelligent piloté par des agents IA pour présélectionner les meilleurs candidats.",
-    image: "/assets/images/hero-mockup-2.png",
-    detailsLink: "#",
-    liveLink: "#"
-  }
-];
+
+export const portfolioHeroData = {
+  subtitle: "Vous avez sûrement déjà vu l'une de nos créations sans savoir que c'était nous derrière...",
+  ctaText: "Voir toutes nos réalisations",
+  // Les logos qui défilent dans le Hero de la page réalisations
+  clientLogos: [
+    { id: 1, name: "Client 1", src: "/assets/logo.svg" },
+    { id: 2, name: "Client 2", src: "/assets/logo.svg" },
+    { id: 3, name: "Client 3", src: "/assets/logo.svg" },
+    { id: 4, name: "Client 4", src: "/assets/logo.svg" },
+    { id: 5, name: "Client 5", src: "/assets/logo.svg" },
+    { id: 6, name: "Client 6", src: "/assets/logo.svg" },
+    { id: 7, name: "Client 7", src: "/assets/logo.svg" },
+    { id: 8, name: "Client 8", src: "/assets/logo.svg" },
+  ]
+};
