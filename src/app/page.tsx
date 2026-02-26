@@ -1,3 +1,4 @@
+import { Preloader } from "@/components/ui/Preloader";
 import { HeroSection } from "@/components/pages/landing/components/HeroSection";
 import { TransitionSection } from "@/components/pages/landing/components/TransitionSection";
 import { PortfolioSection } from "@/components/pages/landing/components/PortfolioSection";
@@ -41,6 +42,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
     <main className="bg-nuru-background min-h-screen selection:bg-nuru-primary selection:text-white">
+      <Preloader />
       {/* 1. Hero */}
       <HeroSection />
       
