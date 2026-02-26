@@ -99,14 +99,14 @@ export default function RootLayout({
         
         {/* Bloc Gauche : Logo au-dessus du texte */}
         <div className="flex flex-col items-center md:items-start gap-4 mb-6 md:mb-0">
-          <Image
+         <Image
             src="/assets/logo.svg" 
             alt="Logo Nuru Agency"
             width={150} 
-            height={32} 
-            className="h-5 w-auto sm:h-6" // Garde cette classe pour la finesse du logo
+            height={40} 
+            className="w-28 md:w-36 lg:w-40 h-auto object-contain shrink-0 transition-all duration-300" 
             priority 
-          /> 
+          />
           
           {/* Année dynamique avec JS */}
           <span>&copy; {new Date().getFullYear()} Nuru Agency. Tous droits réservés.</span>
