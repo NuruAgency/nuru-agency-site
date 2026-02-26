@@ -83,7 +83,7 @@ export function HeroSection() {
 
           {/* Bouton Secondaire */}
           <Link 
-            href="#realisations"
+            href="realisations"
             className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 text-white backdrop-blur-md transition-all hover:bg-white/10"
           >
             <PlaySquare className="w-4 h-4 text-white/80" />

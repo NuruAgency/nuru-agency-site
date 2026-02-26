@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google"; // Ou ta police
 import localFont from "next/font/local";
 import "./globals.css";
+import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar"; // Importe le composant
 
 
@@ -94,6 +95,29 @@ export default function RootLayout({
           {children}
         </main>
       </body>
+      <footer className="container max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center md:items-end text-nuru-text/50 text-sm border-t border-white/5 mt-20">
+        
+        {/* Bloc Gauche : Logo au-dessus du texte */}
+        <div className="flex flex-col items-center md:items-start gap-4 mb-6 md:mb-0">
+          <Image
+            src="/assets/logo.svg" 
+            alt="Logo Nuru Agency"
+            width={150} 
+            height={32} 
+            className="h-5 w-auto sm:h-6" // Garde cette classe pour la finesse du logo
+            priority 
+          /> 
+          
+          {/* Année dynamique avec JS */}
+          <span>&copy; {new Date().getFullYear()} Nuru Agency. Tous droits réservés.</span>
+        </div>
+      
+        {/* Bloc Droit : Liens */}
+        <a href="#" className="hover:text-white transition-colors">
+          Mentions légales
+        </a>
+        
+      </footer>
     </html>
   );
 }
