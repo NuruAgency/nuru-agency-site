@@ -7,14 +7,13 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowUpRight, Globe, ChevronDown, FileText, Users } from "lucide-react";
 
-// On importe le type ou on le déduit de nos données
+
 import { allProjects } from "@/data/projects.data";
 type Project = typeof allProjects[0];
 
 export function ProjectDetails({ project }: { project: Project }) {
   const router = useRouter();
   
-  // États pour les accordéons
   const [isProjectOpen, setIsProjectOpen] = useState(true);
   const [isTeamOpen, setIsTeamOpen] = useState(true);
 
