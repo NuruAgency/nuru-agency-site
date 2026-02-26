@@ -131,15 +131,11 @@ export function Preloader() {
                   transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
                   className="absolute w-32 h-32 md:w-40 md:h-40 bg-nuru-background rounded-[40px] flex items-center justify-center shadow-[0_0_60px_rgba(0,0,0,0.5)] border border-white/10"
                 >
-                    <Image
-                                        src="/assets/logo.svg"
-                                        alt="Logo Nuru Agency"
-                                        width={160}
-                                        height={40}
-                                        className="w-28 md:w-36 lg:w-40 h-auto object-contain shrink-0 transition-all duration-300"
-                                        priority
-                                        unoptimized
-                                        />
+                   <img
+  src="/assets/logo.svg" 
+  alt="Logo Nuru Agency"
+  className="w-28 md:w-36 lg:w-40 h-auto object-contain shrink-0 transition-all duration-300" 
+/>
                 </motion.div>
               )}
             </AnimatePresence>
