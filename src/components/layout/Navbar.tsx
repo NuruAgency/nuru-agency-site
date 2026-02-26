@@ -58,15 +58,11 @@ export function Navbar() {
       >
         {/* --- LOGO CORRIGÉ --- */}
         <Link href="/" className="flex items-center gap-2 group shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
-                                       <Image
-                                        src="/assets/logo.svg"
-                                        alt="Logo Nuru Agency"
-                                        width={160}
-                                        height={40}
-                                        className="w-28 md:w-36 lg:w-40 h-auto object-contain shrink-0 transition-all duration-300"
-                                        priority
-                                        unoptimized
-                                        />
+<img
+  src="/assets/logo.svg" 
+  alt="Logo Nuru Agency"
+  className="w-28 md:w-36 lg:w-40 h-auto object-contain shrink-0 transition-all duration-300" 
+/>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 px-6 py-2">
