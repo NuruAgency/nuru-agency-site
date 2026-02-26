@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { allProjects } from "@/data/projects.data";
 
 import { ProjectDetails } from "@/components/pages/projects/ProjectDetails";
-import { PortfolioCTA } from "@/components/pages/réalisations/PortfolioCTA";
+import { PortfolioCTA } from "@/components/pages/realisations/PortfolioCTA";
 
 // 1. Fonction Next.js pour générer les routes statiques lors du build (Très bon pour le SEO)
 export function generateStaticParams() {
