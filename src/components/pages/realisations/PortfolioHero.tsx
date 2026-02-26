@@ -18,26 +18,33 @@ export function PortfolioHero() {
           <motion.div
             key={index}
             initial={{ y: 0 }}
-            animate={{ 
+            animate={{
               y: [0, -15, 0], // Mouvement de haut en bas
               rotate: [0, index % 2 === 0 ? 5 : -5, 0] // Légère rotation
             }}
-            transition={{ 
-              duration: 4, 
-              repeat: Infinity, 
+            transition={{
+              duration: 4,
+              repeat: Infinity,
               ease: "easeInOut",
               delay: index * 0.4 // Décalage pour un effet de vague
             }}
             // L'icône du centre est plus nette et plus grande, les autres sont floutées
             className={`flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl ${
-              index === 2 
+              index === 2
                 ? "w-20 h-20 opacity-100 shadow-[0_0_30px_rgba(230,12,115,0.4)]" 
                 : "w-16 h-16 opacity-60 blur-[3px] scale-90"
             }`}
           >
             {/* Remplace par l'icône de ton logo (ex: le "N" de Nuru) */}
             <div className="text-3xl font-glitz font-bold bg-gradient-to-br from-nuru-blue to-nuru-primary bg-clip-text text-transparent">
-              N
+             <Image
+            src="/assets/logo.svg" 
+            alt="Logo Nuru Agency"
+            width={120} 
+            height={32} 
+            className="w-auto h-5 md:h-6 object-contain shrink-0" 
+            priority 
+          />
             </div>
           </motion.div>
         ))}
@@ -47,7 +54,7 @@ export function PortfolioHero() {
       <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-3xl mx-auto">
         
         {/* Titre [ Made by Nuru ] */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, type: "spring" }}
@@ -56,11 +63,11 @@ export function PortfolioHero() {
           <span className="text-nuru-primary font-mono font-light text-5xl md:text-6xl lg:text-8xl">[</span>
           <span className="text-white tracking-tight">Made by</span>
           <div className="mt-1 md:mt-3">
-            <Image 
-              src="/assets/logo.svg" 
-              alt="Nuru Agency" 
-              width={200} 
-              height={50} 
+            <Image
+              src="/assets/logo.svg"
+              alt="Nuru Agency"
+              width={200}
+              height={50}
               className="w-[120px] md:w-[180px] lg:w-[220px] object-contain"
             />
           </div>
