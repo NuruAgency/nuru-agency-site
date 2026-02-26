@@ -120,7 +120,7 @@ export function PortfolioSection() {
                 
                 <div className="flex flex-wrap gap-2.5 mb-8">
                   {currentProject.tags.map((tag, i) => (
-                    <span key={i} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-nuru-blue text-xs font-bold uppercase tracking-wider font-sans">
+                    <span key={i} className="px-4 py-1.5 rounded-full  border border-white/10 bg-[#397BBF] text-xs font-bold uppercase tracking-wider font-sans">
                       {tag}
                     </span>
                   ))}

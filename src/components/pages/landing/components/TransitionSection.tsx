@@ -27,7 +27,7 @@ export function TransitionSection() {
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </Link>
           <Link 
-            href="#realisations"
+            href="realisations"
             className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 font-medium text-white backdrop-blur-md transition-all hover:bg-white/10 hover:border-white/20"
           >
             <PlayCircle className="w-4 h-4 text-nuru-blue" />
