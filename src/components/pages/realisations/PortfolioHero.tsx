@@ -8,7 +8,7 @@ import { ChevronUp, ChevronDown } from "lucide-react";
 // 1. On importe les données centralisées
 import { showcaseProjects } from "@/data/projects.data";
 
-export function PortfolioSection() {
+export function PortfolioHero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
