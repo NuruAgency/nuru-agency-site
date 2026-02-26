@@ -37,9 +37,12 @@ const pillars = [
 
 export function PillarsSection() {
   return (
-    // Correction du double "relative"
-    <section className="py-24 relative z-20 bg-nuru-background flex justify-center">
-      <div className="bg-white max-w-5xl mx-auto rounded-[40px] p-8 md:p-16 text-center border-white/5 shadow-2xl">
+    // 1. AJOUT DU PADDING (px-4 md:px-8 lg:px-12) pour créer les marges latérales
+    // 2. AJOUT DE w-full pour que la section prenne tout l'écran
+    <section className="py-24 px-4 md:px-8 lg:px-12 relative z-20 bg-nuru-background flex justify-center w-full">
+      
+      {/* 3. RETRAIT DE max-w-5xl ET AJOUT DE w-full pour que le fond blanc s'étire */}
+      <div className="bg-white w-full rounded-[40px] p-8 md:p-16 lg:p-20 text-center border-white/5 shadow-2xl">
         
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +54,7 @@ export function PillarsSection() {
         </motion.h2>
 
         {/* Grille des piliers */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
           {pillars.map((pillar, index) => (
             <motion.div
               key={pillar.title}
@@ -59,7 +62,6 @@ export function PillarsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
-              // L'utilisation de justify-start et min-h-[320px] aligne parfaitement tout au même niveau
               className={`rounded-[32px] p-8 flex flex-col items-center justify-start min-h-[320px] ${pillar.bg} ${pillar.text} hover:scale-105 transition-transform duration-300 shadow-xl`}
             >
               {/* Le conteneur de l'icône */}
