@@ -58,15 +58,15 @@ export function Navbar() {
       >
         {/* --- LOGO CORRIGÉ --- */}
         <Link href="/" className="flex items-center gap-2 group shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
-          <Image
-            src="/assets/logo.svg" 
-            alt="Logo Nuru Agency"
-            width={160} // J'ai augmenté la largeur native
-            height={40} // J'ai augmenté la hauteur native
-            // CORRECTION ICI : w-28 sur mobile, w-36 sur tablet, w-40 sur desktop. Hauteur auto !
-            className="w-28 md:w-36 lg:w-40 h-auto object-contain shrink-0 transition-all duration-300" 
-            priority 
-          />
+                                       <Image
+                                        src="/assets/logo.svg"
+                                        alt="Logo Nuru Agency"
+                                        width={160}
+                                        height={40}
+                                        className="w-28 md:w-36 lg:w-40 h-auto object-contain shrink-0 transition-all duration-300"
+                                        priority
+                                        unoptimized
+                                        />
         </Link>
 
         <div className="hidden md:flex items-center gap-8 px-6 py-2">
