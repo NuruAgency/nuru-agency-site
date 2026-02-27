@@ -4,19 +4,21 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react"; 
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useBooking } from "@/context/BookingContext";
 
 const navLinks = [
-  { name: "Réalisations", href: "/realisations" }, // J'ai corrigé le lien ici au cas où
-  { name: "Offre", href: "#offre" },
-  { name: "Histoire", href: "#histoire" },
+  { name: "Réalisations", href: "realisations" }, // J'ai corrigé le lien ici au cas où
+  { name: "Offre", href: "offre" },
+  { name: "Histoire", href: "histoire" },
 ];
 
 export function Navbar() {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-  
+  const { openBooking } = useBooking();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -34,7 +36,7 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center pt-4 px-4 pointer-events-none">
-      
+
       <motion.nav
         layout
         animate={{
@@ -58,11 +60,11 @@ export function Navbar() {
       >
         {/* --- LOGO CORRIGÉ --- */}
         <Link href="/" className="flex items-center gap-2 group shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
-<img
-  src="/assets/logo.svg" 
-  alt="Logo Nuru Agency"
-  className="w-28 md:w-36 lg:w-40 h-auto object-contain shrink-0 transition-all duration-300" 
-/>
+          <img
+            src="/assets/logo.svg"
+            alt="Logo Nuru Agency"
+            className="w-20 md:w-30 lg:w-35 h-auto object-contain shrink-0 transition-all duration-300"
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-8 px-6 py-2">
@@ -78,17 +80,18 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link
-            href="/contact"
-            className="hidden md:flex items-center gap-2 bg-nuru-primary hover:bg-nuru-primary/90 text-white px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(230,12,115,0.4)]"
-          >
+
+          <button className="hidden md:flex items-center gap-2 bg-nuru-primary hover:bg-nuru-primary/90 text-white px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(230,12,115,0.4)]" onClick={openBooking}>
             <span className="font-glitz tracking-widest pt-0.5">
               Réserver un appel
+
             </span>
             <ArrowUpRight className="w-4 h-4" />
-          </Link>
+          </button>
 
-          <button 
+
+
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-white bg-white/5 rounded-full backdrop-blur-md border border-white/10 hover:bg-white/10 transition-colors"
             aria-label="Menu"
@@ -102,7 +105,7 @@ export function Navbar() {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 16, scale: 1 }} 
+            animate={{ opacity: 1, y: 16, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="pointer-events-auto absolute top-full left-4 right-4 bg-nuru-background/90 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 flex flex-col gap-4 shadow-2xl md:hidden z-40"
@@ -111,13 +114,13 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)} 
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="text-lg font-medium text-white/80 hover:text-white py-3 border-b border-white/5 transition-colors"
               >
                 {link.name}
               </Link>
             ))}
-            
+
             <Link
               href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}

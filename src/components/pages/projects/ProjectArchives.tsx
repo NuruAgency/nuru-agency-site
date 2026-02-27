@@ -19,19 +19,19 @@ export function ProjectArchives() {
   return (
     <section className="py-24 w-full relative z-20 bg-nuru-background">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
-        
+
         {/* --- HEADER DE LA SECTION --- */}
         <div className="flex flex-col items-center text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold text-white mb-6 max-w-3xl leading-[1.2]"
           >
-            Naviguez à travers les archives <br className="hidden md:block"/>
+            Naviguez à travers les archives <br className="hidden md:block" />
             des projets Nuru Agency.
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -48,11 +48,10 @@ export function ProjectArchives() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${
-                activeCategory === category
-                  ? "bg-nuru-primary border-nuru-primary text-white shadow-[0_0_20px_rgba(230,12,115,0.4)] scale-105"
-                  : "bg-transparent border-white/20 text-white/70 hover:border-white/40 hover:text-white"
-              }`}
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${activeCategory === category
+                ? "bg-nuru-primary border-nuru-primary text-white shadow-[0_0_20px_rgba(230,12,115,0.4)] scale-105"
+                : "bg-transparent border-white/20 text-white/70 hover:border-white/40 hover:text-white"
+                }`}
             >
               {category}
             </button>
@@ -61,12 +60,12 @@ export function ProjectArchives() {
 
         {/* --- GRILLE DE PROJETS (ANIMÉE) --- */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          
+
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
-                layout 
+                layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
@@ -85,11 +84,13 @@ export function ProjectArchives() {
 
                 {/* 2. Contenu (Bas) */}
                 <div className="p-8 flex-1 flex flex-col">
-                  
+
                   {/* Titre & Logo miniature */}
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-8 h-8 bg-nuru-background rounded-lg flex items-center justify-center shadow-inner">
-                      <span className="font-glitz text-nuru-primary font-bold text-sm">N</span>
+
+                      <img src="/assets/icon.png" alt="icon" />
+
                     </div>
                     <h3 className="text-xl font-bold text-nuru-background tracking-tight">
                       {project.clientName}
@@ -99,8 +100,8 @@ export function ProjectArchives() {
                   {/* Badges / Tags (Bleus) */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag, idx) => (
-                      <span 
-                        key={idx} 
+                      <span
+                        key={idx}
                         className="bg-nuru-blue/10 text-nuru-blue px-3.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider"
                       >
                         {tag}
@@ -123,7 +124,7 @@ export function ProjectArchives() {
                       Détails du projet
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </Link>
-                    
+
                     <a
                       href={project.liveLink}
                       target="_blank"
@@ -134,12 +135,12 @@ export function ProjectArchives() {
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </a>
                   </div>
-                  
+
                 </div>
               </motion.div>
             ))}
           </AnimatePresence>
-          
+
           {/* Message si aucun projet ne correspond */}
           {filteredProjects.length === 0 && (
             <div className="col-span-full text-center py-12 text-white/50">

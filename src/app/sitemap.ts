@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
- 
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nuruagency.com";
 
@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1, // Page la plus importante
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/realisations`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

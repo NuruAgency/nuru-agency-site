@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
+import { BookingProvider } from "@/context/BookingContext";
+import { BookingDrawer } from "@/components/ui/BookingDrawer";
 import { Inter } from "next/font/google"; // Ou ta police
 import localFont from "next/font/local";
 import "./globals.css";
 import Image from "next/image";
 import { Navbar } from "@/components/layout/Navbar"; // Importe le composant
+import { Footer } from "@/components/layout/footer"; // Importe le composant
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 const glitz = localFont({
-  src: "./fonts/Glitz.otf", 
-  variable: "--font-glitz", 
+  src: "./fonts/Glitz.otf",
+  variable: "--font-glitz",
   display: "swap",
 });
 
 // L'URL de production de ton site
-const siteUrl = "https://nuruagency.com"; 
+const siteUrl = "https://nuruagency.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -89,32 +92,17 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth">
       <body className={`${inter.className} ${glitz.variable} antialiased bg-nuru-background text-nuru-text`}>
-        <Navbar /> 
-        <main className="min-h-screen pt-20">    
-      {/* <div className="h-[100vh]"></div>  */}
-          {children}
-        </main>
+        <BookingProvider>
+          <Navbar />
+          <main className="min-h-screen pt-20">
+            {/* <div className="h-[100vh]"></div>  */}
+            {children}
+          </main>
+          <Footer />
+          <BookingDrawer />
+        </BookingProvider>
       </body>
-      <footer className="container max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center md:items-end text-nuru-text/50 text-sm border-t border-white/5 mt-20">
-        
-        {/* Bloc Gauche : Logo au-dessus du texte */}
-        <div className="flex flex-col items-center md:items-start gap-4 mb-6 md:mb-0">
-          <img
-  src="/assets/logo.svg" 
-  alt="Logo Nuru Agency"
-  className="w-28 md:w-36 lg:w-40 h-auto object-contain shrink-0 transition-all duration-300" 
-/>
-          
-          {/* Année dynamique avec JS */}
-          <span>&copy; {new Date().getFullYear()} Nuru Agency. Tous droits réservés.</span>
-        </div>
-      
-        {/* Bloc Droit : Liens */}
-        <a href="#" className="hover:text-white transition-colors">
-          Mentions légales
-        </a>
-        
-      </footer>
+
     </html>
   );
 }

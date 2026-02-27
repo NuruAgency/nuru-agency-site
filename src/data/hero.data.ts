@@ -2,7 +2,7 @@ export const heroData = {
   title: {
     start: "Des architectures natives",
     highlight: "époustouflantes",
-    badge: "& INTELLIGENT AUTOMATION", 
+    badge: "& INTELLIGENT AUTOMATION",
     end: "pour des visions uniques."
   },
   description: "Nous bâtissons des écosystèmes digitaux si robustes et automatisés que votre infrastructure devient votre plus grand levier de croissance. Ne vous contentez pas d'exister en ligne, dominez votre marché avec la précision de l'IA.",
@@ -37,7 +37,14 @@ export const heroData = {
   socialProof: {
     text: "Ils ont choisi l'excellence technique pour redéfinir leurs standards.",
     logos: [
-        "NURU", "NURU", "NURU", "NURU", "NURU", "NURU" 
+      { id: 1, name: "Client 1", src: "/assets/logo.svg" },
+      { id: 2, name: "Client 2", src: "/assets/logo.svg" },
+      { id: 3, name: "Client 3", src: "/assets/logo.svg" },
+      { id: 4, name: "Client 4", src: "/assets/logo.svg" },
+      { id: 5, name: "Client 5", src: "/assets/logo.svg" },
+      { id: 6, name: "Client 6", src: "/assets/logo.svg" },
+      { id: 7, name: "Client 7", src: "/assets/logo.svg" },
+      { id: 8, name: "Client 8", src: "/assets/logo.svg" },
     ]
   }
 };

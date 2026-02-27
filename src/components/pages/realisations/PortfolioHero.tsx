@@ -11,7 +11,7 @@ export function PortfolioHero() {
 
   return (
     <section className="relative pt-40 pb-20 overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
-      
+
       {/* 1. ICÔNES FLOTTANTES (Effet de profondeur en haut) */}
       <div className="flex justify-center items-center gap-4 md:gap-8 mb-12 relative z-10">
         {[1, 2, 3, 4, 5].map((item, index) => (
@@ -29,22 +29,21 @@ export function PortfolioHero() {
               delay: index * 0.4 // Décalage pour un effet de vague
             }}
             // L'icône du centre est plus nette et plus grande, les autres sont floutées
-            className={`flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl ${
-              index === 2
-                ? "w-20 h-20 opacity-100 shadow-[0_0_30px_rgba(230,12,115,0.4)]" 
-                : "w-16 h-16 opacity-60 blur-[3px] scale-90"
-            }`}
+            className={`flex items-center justify-center bg-white/5 border border-white/10 rounded-2xl ${index === 2
+              ? "w-20 h-20 opacity-100 shadow-[0_0_30px_rgba(230,12,115,0.4)]"
+              : "w-16 h-16 opacity-60 blur-[3px] scale-90"
+              }`}
           >
             {/* Remplace par l'icône de ton logo (ex: le "N" de Nuru) */}
             <div className="text-3xl font-glitz font-bold bg-gradient-to-br from-nuru-blue to-nuru-primary bg-clip-text text-transparent">
-             <Image
-            src="/assets/logo.svg" 
-            alt="Logo Nuru Agency"
-            width={120} 
-            height={32} 
-            className="w-auto h-5 md:h-6 object-contain shrink-0" 
-            priority 
-          />
+              <Image
+                src="/assets/icon.png"
+                alt="Logo Nuru Agency"
+                width={150}
+                height={80}
+                className="w-auto object-contain shrink-0"
+                priority
+              />
             </div>
           </motion.div>
         ))}
@@ -52,7 +51,7 @@ export function PortfolioHero() {
 
       {/* 2. TEXTES ET TITRE PRINCIPAL */}
       <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-3xl mx-auto">
-        
+
         {/* Titre [ Made by Nuru ] */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -75,7 +74,7 @@ export function PortfolioHero() {
         </motion.div>
 
         {/* Sous-titre */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -85,7 +84,7 @@ export function PortfolioHero() {
         </motion.p>
 
         {/* Bouton / Barre de recherche (Comme sur la maquette) */}
-        <motion.button 
+        <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -101,7 +100,7 @@ export function PortfolioHero() {
       </div>
 
       {/* 3. GRILLE DE LOGOS DÉFILANTE (MARQUEE) */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -122,15 +121,15 @@ export function PortfolioHero() {
             }}
           >
             {duplicatedLogos.map((logo, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="flex-shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
               >
-                <Image 
-                  src={logo.src} 
-                  alt={logo.name} 
-                  width={140} 
-                  height={40} 
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  width={140}
+                  height={40}
                   className="w-[100px] md:w-[140px] h-auto object-contain"
                 />
               </div>

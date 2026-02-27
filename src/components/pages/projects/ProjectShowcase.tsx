@@ -54,7 +54,7 @@ export function ProjectShowcase() {
   return (
     <section className="py-24 w-full overflow-hidden relative z-20">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        
+
         {/* --- HEADER DE LA SECTION --- */}
         <div className="mb-12">
           {/* Titre style "Badge + Texte" comme sur la maquette */}
@@ -71,13 +71,13 @@ export function ProjectShowcase() {
 
           {/* Boutons de navigation (Flèches) */}
           <div className="flex items-center gap-4">
-            <button 
+            <button
               onClick={prevProject}
               className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-nuru-background hover:bg-gray-200 transition-colors shadow-lg active:scale-95"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
-            <button 
+            <button
               onClick={nextProject}
               className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-nuru-background hover:bg-gray-200 transition-colors shadow-lg active:scale-95"
             >
@@ -110,13 +110,14 @@ export function ProjectShowcase() {
                 // La carte fait 85% de la largeur pour laisser de la place à la suivante sur le côté droit
                 className="absolute top-0 left-0 w-full md:w-[85%] h-full bg-white rounded-[32px] md:rounded-[40px] p-6 md:p-8 flex flex-col md:flex-row gap-8 shadow-2xl origin-left"
               >
-                
+
                 {/* Contenu gauche (Texte) */}
                 <div className="flex-1 flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-6">
                     {/* Faux logo du client */}
                     <div className="w-10 h-10 bg-nuru-background rounded-xl flex items-center justify-center">
-                      <span className="font-glitz text-nuru-primary font-bold text-xl">N</span>
+
+                      <img src="/assets/icon.png" alt="icon" />
                     </div>
                     <div>
                       <h3 className="text-xl font-glitz tracking-widest text-nuru-background leading-none">{project.clientName}</h3>
@@ -127,9 +128,9 @@ export function ProjectShowcase() {
 
                   {/* Badge (Remplacé par le premier tag de ton tableau tags) */}
                   {project.tags && project.tags.length > 0 && (
-                     <div className="bg-blue-500 text-white text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-full w-max mb-6 tracking-wide shadow-sm">
-                        {project.tags[0]}
-                     </div>
+                    <div className="bg-blue-500 text-white text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-full w-max mb-6 tracking-wide shadow-sm">
+                      {project.tags[0]}
+                    </div>
                   )}
 
                   {/* Description (Utilisation de shortDescription) */}
@@ -138,7 +139,7 @@ export function ProjectShowcase() {
                   </p>
 
                   {/* Lien dynamique vers la page de détails */}
-                  <Link 
+                  <Link
                     href={`/realisations/${project.slug}`}
                     className="inline-flex items-center gap-2 bg-nuru-blue text-white px-6 py-3 rounded-full w-max text-sm font-semibold hover:bg-blue-600 transition-colors group shadow-md"
                   >
@@ -149,8 +150,8 @@ export function ProjectShowcase() {
 
                 {/* Contenu droit (Image principale de la galerie) */}
                 <div className="flex-1 relative w-full h-[250px] md:h-full bg-gray-100 rounded-[24px] overflow-hidden">
-                  <Image 
-                    src={project.gallery[0] || "/assets/placeholder.jpg"} 
+                  <Image
+                    src={project.gallery[0] || "/assets/placeholder.jpg"}
                     alt={project.clientName}
                     fill
                     className="object-cover"
