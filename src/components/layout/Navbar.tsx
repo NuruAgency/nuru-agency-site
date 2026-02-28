@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useBooking } from "@/context/BookingContext";
+import { useBooking } from "@/context/BookingContext"; // 👈 On a bien notre contexte
 
 const navLinks = [
-  { name: "Réalisations", href: "realisations" }, // J'ai corrigé le lien ici au cas où
+  { name: "Réalisations", href: "realisations" },
   { name: "Offre", href: "offre" },
   { name: "Histoire", href: "histoire" },
 ];
@@ -58,7 +57,7 @@ export function Navbar() {
           isMobileMenuOpen && !isScrolled && "bg-nuru-background/90 backdrop-blur-xl border-white/10"
         )}
       >
-        {/* --- LOGO CORRIGÉ --- */}
+        {/* --- LOGO --- */}
         <Link href="/" className="flex items-center gap-2 group shrink-0" onClick={() => setIsMobileMenuOpen(false)}>
           <img
             src="/assets/logo.svg"
@@ -67,6 +66,7 @@ export function Navbar() {
           />
         </Link>
 
+        {/* --- LIENS DESKTOP --- */}
         <div className="hidden md:flex items-center gap-8 px-6 py-2">
           {navLinks.map((link) => (
             <Link
@@ -80,17 +80,18 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-
-          <button className="hidden md:flex items-center gap-2 bg-nuru-primary hover:bg-nuru-primary/90 text-white px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(230,12,115,0.4)]" onClick={openBooking}>
+          {/* --- BOUTON RESERVER DESKTOP --- */}
+          <button 
+            onClick={openBooking}
+            className="hidden md:flex items-center gap-2 bg-nuru-primary hover:bg-nuru-primary/90 text-white px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(230,12,115,0.4)]" 
+          >
             <span className="font-glitz tracking-widest pt-0.5">
               Réserver un appel
-
             </span>
             <ArrowUpRight className="w-4 h-4" />
           </button>
 
-
-
+          {/* --- BOUTON MENU BURGER MOBILE --- */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 text-white bg-white/5 rounded-full backdrop-blur-md border border-white/10 hover:bg-white/10 transition-colors"
@@ -101,6 +102,7 @@ export function Navbar() {
         </div>
       </motion.nav>
 
+      {/* --- MENU MOBILE --- */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -121,17 +123,18 @@ export function Navbar() {
               </Link>
             ))}
 
-           <button className="hidden md:flex items-center gap-2 bg-nuru-primary hover:bg-nuru-primary/90 text-white px-5 py-2.5 rounded-full text-sm transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(230,12,115,0.4)]"
-             onClick={() => {
+           
+            <button
+              onClick={() => {
                 setIsMobileMenuOpen(false); 
                 openBooking(); 
-              }}>
-            <span className="font-glitz tracking-widest pt-0.5">
+              }}
+              className="mt-4 flex items-center justify-center gap-2 bg-nuru-primary text-white px-5 py-3.5 rounded-2xl text-base font-glitz tracking-widest transition-transform active:scale-95"
+            >
               Réserver un appel
-
-            </span>
-            <ArrowUpRight className="w-4 h-4" />
-          </button>
+              <ArrowUpRight className="w-5 h-5" />
+            </button>
+            
           </motion.div>
         )}
       </AnimatePresence>
