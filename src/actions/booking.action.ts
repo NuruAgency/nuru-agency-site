@@ -1,3 +1,4 @@
+
 "use server";
 
 import { prisma } from "@/lib/prisma";
@@ -31,13 +32,14 @@ export async function createBooking(formData: FormData) {
             },
         });
 
-        // B. Envoi de l'email via Resend
+        // B. Envoi des emails via Resend
         try {
             const formattedDate = new Date(dateStr).toLocaleDateString('fr-FR', {
                 weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
             });
 
-            await resend.emails.send({
+            // 📩 1. Préparation de l'e-mail pour le PROSPECT
+            const emailToProspect = resend.emails.send({
                 from: "Nuru Agency <contact@nuruagency.com>", // Ton domaine vérifié !
                 to: email, // L'email de ton prospect
                 subject: "Confirmation de votre appel stratégique - Nuru Agency",
@@ -64,7 +66,39 @@ export async function createBooking(formData: FormData) {
                     </div>
                 `,
             });
-            console.log("Email envoyé avec succès à", email);
+
+            // 🚨 2. Préparation de l'e-mail de NOTIFICATION POUR TOI (L'Admin)
+            const emailToAdmin = resend.emails.send({
+                from: "Nuru Agency <contact@nuruagency.com>", // Utilise la même adresse d'envoi vérifiée
+                to: "benjamin.trazie@nuruagency.com", // ⚠️ REMPLACE CECI PAR TON ADRESSE E-MAIL DE RÉCEPTION
+                subject: `🚨 Nouvelle réservation : ${name} (${formattedDate} à ${time})`,
+                html: `
+                    <div style="font-family: Arial, sans-serif; color: #333; padding: 20px; border: 1px solid #ddd; border-radius: 8px; max-width: 600px;">
+                        <h2 style="color: #E60C73;">Nouvel appel stratégique réservé !</h2>
+                        <p>Tu as une nouvelle demande de réservation. Voici les détails pour créer le lien Google Meet :</p>
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li style="margin-bottom: 10px;"><strong>Nom :</strong> ${name}</li>
+                            <li style="margin-bottom: 10px;"><strong>E-mail :</strong> <a href="mailto:${email}">${email}</a></li>
+                            <li style="margin-bottom: 10px;"><strong>Date :</strong> ${formattedDate}</li>
+                            <li style="margin-bottom: 10px;"><strong>Heure :</strong> ${time}</li>
+                        </ul>
+                        
+                        <h3>Détails du projet :</h3>
+                        <blockquote style="background-color: #f9fafb; padding: 15px; border-left: 4px solid #E60C73; border-radius: 4px;">
+                            ${projectDescription ? projectDescription : "<em>Aucune description fournie.</em>"}
+                        </blockquote>
+                        
+                        <p style="margin-top: 30px;">
+                            👉 <a href="https://calendar.google.com/calendar/u/0/r/eventedit" target="_blank" style="background-color: #E60C73; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Créer l'événement sur Google Agenda</a>
+                        </p>
+                    </div>
+                `,
+            });
+
+            // 🚀 3. Envoi des deux e-mails en parallèle
+            await Promise.all([emailToProspect, emailToAdmin]);
+            
+            console.log("Emails envoyés avec succès au client et à l'admin.");
         } catch (emailError) {
             console.error("Erreur Resend :", emailError);
         }
